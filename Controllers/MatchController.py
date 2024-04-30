@@ -1,9 +1,12 @@
-from Models.Match import Match
+from Models.Match import Match 
+
 
 class MatchController:
+
     
     def __init__(self):
         pass
+# Sauts de ligne : Flake8 recommande deux lignes vides avant de définir une nouvelle classe ou fonction
 
     def create_match_pairs(self, players):
         """
@@ -16,7 +19,6 @@ class MatchController:
             list: Une liste de paires de joueurs.
         """
         return list(zip(players[::2], players[1::2]))
-
 
     def create_matches(self, pairs):
         """
@@ -36,7 +38,8 @@ class MatchController:
 
     def pair_players(self, sorted_players, played_matches):
         """
-        Appaire les joueurs pour un match, en veillant à ce qu'ils n'aient pas joué ensemble.
+        Appaire les joueurs pour un match, 
+        en veillant à ce qu'ils n'aient pas joué ensemble.
 
         Args:
             sorted_players (list): Une liste de joueurs triée par score.
@@ -58,7 +61,7 @@ class MatchController:
                     paired_players.append((player1, potential_opponent))
                     unpaired_players.pop(idx)
                     opponent_found = True
-                    break
+                    break  # Oh un break
 
             # Si tous les adversaires potentiels ont déjà été rencontrés,
             # choisissez le premier non appairé comme adversaire

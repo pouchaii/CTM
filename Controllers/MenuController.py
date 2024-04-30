@@ -5,6 +5,9 @@ from Controllers.ReportController import ReportController
 from Views.ReportView import ReportView
 from Views.Menu import Menu
 
+# l'erreur ici est l utilisation de match qui n'est pas disponible pour toutes version anterrieur python
+# on peut le remplacer par des if, else 
+
 
 class MenuController:
     def __init__(self):
@@ -15,6 +18,7 @@ class MenuController:
         self.report_controller = ReportController()
         self.report_view = ReportView()
 
+    # Faut sauter les lignes entre chaque fonction CLasse 2 lignes !
     def user_choice(self):
         """
         Gère le choix de l'utilisateur dans le menu principal et appelle les fonctions correspondantes.
@@ -65,8 +69,8 @@ class MenuController:
                 self.report_view.display_tournament_players_alphabetical(players)
             case '5':
                 (tournament_name,
-                 rounds_list,
-                 tournament_id) = (
+                rounds_list,        # ici erreur indentation..
+                tournament_id) = (
                     self.report_controller.get_tournament_rounds_and_matches())
                 players_sorted = (
                     self.report_controller.get_tournament_players_sorted(tournament_id))

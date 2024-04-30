@@ -18,12 +18,12 @@ class TournamentController:
         name, location, start_date, end_date, rounds, description = self.tournamentView.get_tournament_info()
         self.tournament = (
             Tournament(name=name,
-                       location=location,
-                       start_date=start_date,
-                       end_date=end_date,
-                       rounds=rounds,
-                       current_round=1,
-                       description=description))
+                    location=location, #erreur d'indentation
+                    start_date=start_date,
+                    end_date=end_date,
+                    rounds=rounds,
+                    current_round=1,
+                    description=description))
         self.tournament.save_tournament()
 
     def add_player_to_tournament(self):
@@ -82,4 +82,4 @@ class TournamentController:
                     # Demander à l'utilisateur s'il souhaite ajouter un autre joueur
                     add_another = input("Souhaitez-vous ajouter un nouveau joueur à ce tournoi ? o/n: ")
                     if add_another.lower() != 'o':
-                        break  # Sortir de la boucle après avoir ajouté le joueur
+                        break  # Sortir de la boucle après avoir ajouté le joueur  #ohhh un breakk un breaaaak

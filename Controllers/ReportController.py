@@ -4,6 +4,8 @@ from Models.Report import Report
 class ReportController:
     def __init__(self):
         pass
+        # ici deux ligne d'ecart entre chaque fonction et classe
+
 
     def players_alphabetical(self):
         """
@@ -27,6 +29,8 @@ class ReportController:
         """
         report = Report()
         return report.load_tournaments()
+        #encore 2 ligne a sauter
+
 
     def select_tournament_from_list(self):
         """
@@ -51,6 +55,8 @@ class ReportController:
             except ValueError:
                 print("Veuillez choisir un numéro valide.")
 
+
+
     def tournament_players_alphabetical(self):
         """
         Charge la liste des joueurs pour un tournoi spécifique, triée par ordre alphabétique de nom puis de prénom.
@@ -62,6 +68,8 @@ class ReportController:
         players = tournament['player_list']
         sorted_players = sorted(players, key=lambda x: (x['last_name'], x['first_name']))
         return sorted_players
+        # ici encore oublie de saut de ligne
+
 
     def get_tournament_rounds_and_matches(self):
         """

@@ -14,6 +14,8 @@ class RoundsController:
         self.matchController = MatchController()
         self.matchView = MatchView()
         self.roundsView = RoundsView()
+
+        # MAIS ooooh tu oublie de sauter les lignes pour rendre plus lisible
     def shuffle_players_randomly(self, players):
         """
         Mélange la liste des joueurs de manière aléatoire.
@@ -27,6 +29,7 @@ class RoundsController:
         shuffle(players)
         return players
 
+                # PENSE A SAUTER DES LIGNES
     def sort_players_by_score(self, players):
         """
         Trie les joueurs par score, et mélange aléatoirement ceux ayant le même score.
@@ -44,6 +47,7 @@ class RoundsController:
             shuffle(players_with_same_score)
             sorted_players.extend(players_with_same_score)
         return sorted_players
+        # encore une fois les saut de ligne oublier entre chaque fonction
 
     def load_tournaments(self):
         """
@@ -63,6 +67,7 @@ class RoundsController:
             print("Erreur lors de la lecture du fichier JSON.")
             return []
 
+        # erreur de saut de ligne entre chaque fonction
     def get_match_results(self, matches, current_round):
         """
         Obtient les résultats des matchs pour un tour donné, à partir de l'entrée utilisateur.
@@ -92,6 +97,7 @@ class RoundsController:
 
         return results
 
+# wow on collectionne le meme type d'erreur
     def update_player_scores(self, selected_tournament, match_results):
         """
         Met à jour les scores des joueurs dans un tournoi sélectionné, en fonction des résultats des matchs.
@@ -109,6 +115,7 @@ class RoundsController:
                         player['score'] += score
                         break
 
+# wow encore le meme erreur
     def play_round(self):
         """
         Gère le déroulement d'un tour dans un tournoi,
@@ -122,8 +129,7 @@ class RoundsController:
         tournament_id = self.tournamentView.select_tournament(tournaments)
 
         # Charger le tournoi sélectionné
-        selected_tournament = next((tournament for tournament in tournaments if tournament['id'] == tournament_id),
-                                   None)
+        selected_tournament = next((tournament for tournament in tournaments if tournament['id'] == tournament_id),None) # mais c'est quoi ca? trop long,  et pas sur la meme ligne grosse grosse  erreur
         if not selected_tournament:
             print("Tournoi non trouvé.")
             return
